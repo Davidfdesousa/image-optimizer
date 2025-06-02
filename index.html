@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Otimizador de Imagens</title>
+  <title>Otimizador 100% Client-Side</title>
   <style>
     body {
       font-family: sans-serif;
@@ -15,14 +15,33 @@
     .controls {
       margin-bottom: 1rem;
     }
+    .image-wrapper {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      background: #fff;
+    }
+    .image-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .image-container img {
+      max-width: 200px;
+      margin-bottom: 5px;
+      border: 1px solid #ddd;
+    }
   </style>
 </head>
 <body>
-  <h1>Otimizador de Imagens</h1>
+  <h1>Otimizador de Imagens (100% Client-Side)</h1>
 
   <div class="controls">
     <label>
-      Qualidade (1–100): 
+      Qualidade (1–100):
       <input type="range" id="quality" min="1" max="100" value="70" />
       <span id="qualityValue">70</span>
     </label>
@@ -30,14 +49,14 @@
     <label>
       Extensão de saída:
       <select id="format">
-        <option value="image/webp">WebP</option>
-        <option value="image/jpeg">JPEG</option>
-        <option value="image/png">PNG</option>
+        <option value="png" selected>PNG</option>
+        <option value="jpeg">JPEG</option>
+        <option value="webp">WebP</option>
       </select>
     </label>
   </div>
 
-  <input type="file" id="upload" multiple accept="image/*" />
+  <input type="file" id="upload" multiple accept="image/png, image/jpeg" />
   <div id="result"></div>
 
   <script type="module" src="/src/main.ts"></script>

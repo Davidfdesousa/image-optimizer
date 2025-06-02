@@ -13,6 +13,7 @@
     "vite": "^6.3.5"
   },
   "dependencies": {
+    "@nbfe/upng-js": "^1.0.0",
     "browser-image-compression": "^2.0.2"
   }
 }
